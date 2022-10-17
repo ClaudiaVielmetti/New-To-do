@@ -1,0 +1,8 @@
+// Select Elements
+const form = document.getElementById('todo-form');
+const todoInput = document.getElementById('new-todo');
+const todoListEl = document.getElementById('.notification');
+
+//Variables
+let todos =JSON.parse(localStorage.getItem('todos')) || [];
+let EditTodoId = -1;

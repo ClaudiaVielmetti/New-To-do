@@ -93,4 +93,44 @@ todoListEl.addEventListener('click', (event) => {
 
 });
 
+//check todo is done
+function checkTodo(todoId) {
+    todos = todos.map((todo, index) => ({
+      ...todo,
+      checked: index === todoId ? !todo.checked : todo.checked,
+    }));
+  
+    renderTodos();
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
 
+
+//edit todos
+function editTodo(todoId) {
+    todoInput.value = todos[todoId].value;
+    EditTodoId = todoId;
+}
+
+//Delete todos
+function deleteTodo(todoId) {
+    todos = todos.filter((todo, index) => index !== todoId);
+    EditTodoId = -1;
+  
+    // re-render
+    renderTodos();
+    localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+//alert notifications
+function showNotification(msg) {
+    // change the message
+    notificationEl.innerHTML = msg;
+  
+    // notification enter
+    notificationEl.classList.add('notif-enter');
+  
+    // notification leave
+    setTimeout(() => {
+      notificationEl.classList.remove('notif-enter');
+    }, 2000);
+}

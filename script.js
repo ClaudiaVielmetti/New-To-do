@@ -33,7 +33,7 @@
    if (isEmpty) {
      showNotification("Todo's input is empty");
    } else if (isDuplicate) {
-     showNotification('Task already exists!');
+     showNotification('Todo already exists!');
    } else {
      if (EditTodoId >= 0) {
        todos = todos.map((todo, index) => ({

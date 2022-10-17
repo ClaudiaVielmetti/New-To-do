@@ -35,7 +35,7 @@ body {
 header {
   width: 100%;
   height: var(--header-height);
-  background-image: url('./Images/space.jpg');
+  background-image: url(./Images/space.jpg);
   background-size: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -144,6 +144,6 @@ header {
   transition: 300ms right ease-in-out;
 }
 
-.notification-enter {
+.notif-enter {
   right: 10px;
 }

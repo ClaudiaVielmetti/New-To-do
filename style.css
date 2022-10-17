@@ -17,3 +17,24 @@ html{
     font-size: 20px;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container{
+    background-color: rgb(138, 152, 179);
+    width: var(--container-width);
+    height: var(--container-height);
+    position: relative;
+    overflow: hidden;
+}
+
+header{
+    width: 100%;
+    height: var(--container-height);
+    background-image: url();
+}

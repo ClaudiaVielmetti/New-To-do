@@ -35,7 +35,6 @@ body {
 
 header{
     width: 100%;
-    height: var(--container-height);
     background-image: url(./Images/space.jpg);
     background-size: cover;
     border-radius: 5px 5px 0 0;

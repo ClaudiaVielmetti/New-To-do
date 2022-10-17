@@ -56,3 +56,41 @@ function saveTodo() {
         todoInput.value = '';
     }
 }
+
+//render the todos
+todos.forEach((todo, index) => {
+    todoListEl.innerHTML += `
+    <div class="todo" id=${index}>
+      <i 
+        class="bi ${todo.checked ? 'bi-check-circle-fill' : 'bi-circle'}"
+        style="color : ${todo.color}"
+        data-action="check"
+      ></i>
+      <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
+      <i class="bi bi-pencil-square" data-action="edit"></i>
+      <i class="bi bi-trash" data-action="delete"></i>
+    </div>
+    `;
+});
+
+//click the eventlistener for all the todos
+todoListEl.addEventListener('click', (event) => {
+    const target = event.target;
+    const parentElement = target.parentNode;
+
+    if (parentElement.className !== 'todos') return;
+
+    //todo Id
+    const todo = parentElement;
+    const todoId = Number(todo.id);
+
+    //target action
+    const action = target.dataset.action;
+
+    action === 'check' && checkTodo(todoId);
+    action === 'edit' && EditTodoId(todoId);
+    action === 'delete' && deleteTodo(todoId);
+
+});
+
+

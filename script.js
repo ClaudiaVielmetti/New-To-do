@@ -11,16 +11,16 @@
  // 1st render
  renderTodos();
  
- // FORM SUBMIT
+// FORM SUBMIT
  form.addEventListener('submit', function (event) {
    event.preventDefault();
  
    saveTodo();
    renderTodos();
    localStorage.setItem('todos', JSON.stringify(todos));
- });
+});
  
- // SAVE TODO
+// SAVE TODO
  function saveTodo() {
    const todoValue = todoInput.value;
  
@@ -51,10 +51,10 @@
  
      todoInput.value = '';
    }
- }
+}
  
- // RENDER TODOS
- function renderTodos() {
+// RENDER TODOS
+function renderTodos() {
    if (todos.length === 0) {
      todosListEl.innerHTML = '<center>Nothing to do!</center>';
      return;
@@ -78,10 +78,10 @@
      </div>
      `;
    });
- }
+}
  
- // CLICK EVENT LISTENER FOR ALL THE TODOS
- todosListEl.addEventListener('click', (event) => {
+// CLICK EVENT LISTENER FOR ALL THE TODOS
+todosListEl.addEventListener('click', (event) => {
    const target = event.target;
    const parentElement = target.parentNode;
  
@@ -97,10 +97,10 @@
    action === 'check' && checkTodo(todoId);
    action === 'edit' && editTodo(todoId);
    action === 'delete' && deleteTodo(todoId);
- });
+});
  
- // CHECK A TODO
- function checkTodo(todoId) {
+// CHECK A TODO
+function checkTodo(todoId) {
    todos = todos.map((todo, index) => ({
      ...todo,
      checked: index === todoId ? !todo.checked : todo.checked,
@@ -108,26 +108,26 @@
  
    renderTodos();
    localStorage.setItem('todos', JSON.stringify(todos));
- }
+}
  
- // EDIT A TODO
- function editTodo(todoId) {
+// EDIT A TODO
+function editTodo(todoId) {
    todoInput.value = todos[todoId].value;
    EditTodoId = todoId;
- }
+}
  
- // DELETE TODO
- function deleteTodo(todoId) {
+// DELETE TODO
+function deleteTodo(todoId) {
    todos = todos.filter((todo, index) => index !== todoId);
    EditTodoId = -1;
  
    // re-render
    renderTodos();
    localStorage.setItem('todos', JSON.stringify(todos));
- }
+}
  
- // SHOW A NOTIFICATION
- function showNotification(msg) {
+// SHOW A NOTIFICATION
+function showNotification(msg) {
    // change the message
    notificationEl.innerHTML = msg;
  
@@ -138,5 +138,5 @@
    setTimeout(() => {
      notificationEl.classList.remove('notification-enter');
    }, 2000);
- }
+}
  

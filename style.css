@@ -36,5 +36,55 @@ body {
 header{
     width: 100%;
     height: var(--container-height);
-    background-image: url();
+    background-image: url(./Images/space.jpg);
+    background-size: cover;
+    border-radius: 5px 5px 0 0;
+
 }
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#fff;
+}
+
+.new-todo{
+    width: 100%;
+    height: 50px;
+    padding: 0.25rem;
+}
+
+.new-todo form{
+    display: flex;
+    align-items: center;
+}
+
+.new-todo form input{
+    flex: 1;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-right: 0px;
+    outline: transparent;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+
+}
+
+.new-todo form button:hover{
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+
+#todos-list{
+    height: calc(var(--container-height) - var(--header-height));
+    background-color: #fff;
+    padding: 0.5rem;
+    border: 1px solid rgb(219, 219, 219);
+    overflow:scroll ;
+    border-radius: 0 0 5px 5px;
+}
+

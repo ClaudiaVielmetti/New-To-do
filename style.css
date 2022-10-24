@@ -22,10 +22,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #9fa8a3;
 }
 
 .container {
-  background-color: antiquewhite;
+  background-color: whitesmoke;
   width: var(--container-width);
   height: var(--container-height);
 

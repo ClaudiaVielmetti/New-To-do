@@ -73,10 +73,11 @@ function renderTodos() {
         data-action="check"
       ></i>
       <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
+      <i class="bi bi-calendar"></i>
       <i class="bi bi-pencil-square" data-action="edit"></i>
       <i class="bi bi-trash" data-action="delete"></i>
 
-      <i class="bi bi-calendar"></i>
+      
       
     </div>
     `;

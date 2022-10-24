@@ -124,6 +124,10 @@ header {
   color: rgb(236, 82, 82);
   margin: 0;
 }
+#todos-list .todo .bi-calendar {
+  color:blueviolet;
+  
+}
 
 .notification {
   position: absolute;

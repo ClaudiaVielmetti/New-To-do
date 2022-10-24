@@ -53,6 +53,18 @@ function saveTodo() {
   }
 }
 
+$(document).ready(function(){
+  var date_input=$('input[name="date"]'); //our date input has the name "date"
+  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+  date_input.datepicker({
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+  })
+})
+
+
 // RENDER TODOS
 function renderTodos() {
   if (todos.length === 0) {
@@ -73,7 +85,7 @@ function renderTodos() {
         data-action="check"
       ></i>
       <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
-      <i class="bi bi-calendar"></i>
+   
       <i class="bi bi-pencil-square" data-action="edit"></i>
       <i class="bi bi-trash" data-action="delete"></i>
 
@@ -83,6 +95,9 @@ function renderTodos() {
     `;
   });
 }
+
+
+
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {

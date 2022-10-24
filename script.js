@@ -54,18 +54,6 @@ function saveTodo() {
 }
 
 
-$(document).ready(function(){
-  var date_input=$('input[name="date"]'); //our date input has the name "date"
-  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-  date_input.datepicker({
-      format: 'mm/dd/yyyy',
-      container: container,
-      todayHighlight: true,
-      autoclose: true,
-  })
-})
-
-
 // RENDER TODOS
 function renderTodos() {
   if (todos.length === 0) {
@@ -75,6 +63,7 @@ function renderTodos() {
 
   // CLEAR ELEMENT BEFORE A RE-RENDER
   todosListEl.innerHTML = '';
+
 
   // RENDER TODOS
   todos.forEach((todo, index) => {
@@ -94,6 +83,7 @@ function renderTodos() {
       
     </div>
     `;
+    
   });
 }
 

@@ -22,7 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #9fa8a3;
+  background-image: url(./Images/dusk.png);
   
 }
 
@@ -54,13 +54,6 @@ header {
 
 .btn-outline {
   text-align: center;
-}
-
-
-.fa-plus {
-  background-color: #abcea1;
-  padding: 3px;
-  border-radius: 3px;
 }
 
 
@@ -100,7 +93,7 @@ header {
 
 #todos-list {
   height: calc(var(--container-height) - var(--header-height));
-  background-color: #fff;
+  background-color:lavender;
   padding: 0.5rem;
   border: 1px solid rgb(219, 219, 219);
   overflow: scroll;

@@ -88,6 +88,11 @@ function renderTodos() {
   });
 }
 
+//SORT ALPHABETICALLY
+
+//NOTE:
+
+//ONLY WORKS UPON REFRESH OF PAGE
 $('.todo').sort(function(a, b) {
   if (a.textContent < b.textContent) {
     return -1;

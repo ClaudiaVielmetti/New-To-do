@@ -25,9 +25,12 @@ function saveTodo() {
   const todoValue = todoInput.value;
 
   // check if the todo is empty
+  //so the user will not have to continuously clear the field
   const isEmpty = todoValue === '';
 
   // check for duplicate todos
+
+  //If not - send out alert
   const isDuplicate = todos.some((todo) => todo.value.toUpperCase() === todoValue.toUpperCase());
 
   if (isEmpty) {
@@ -54,7 +57,7 @@ function saveTodo() {
 }
 
 
-// RENDER TODOS
+// RENDER TODOS - if there are no tasks
 function renderTodos() {
   if (todos.length === 0) {
     todosListEl.innerHTML = '<center>Nothing to do!</center>';
@@ -65,7 +68,7 @@ function renderTodos() {
   todosListEl.innerHTML = '';
 
 
-  // RENDER TODOS
+  // RENDER TODOS - show todos with their icons
   todos.forEach((todo, index) => {
     todosListEl.innerHTML += `
     <div class="todo" id=${index}>

@@ -81,13 +81,20 @@ function renderTodos() {
 
       
       
+      
     </div>
     `;
     
   });
 }
 
-
+$('.todo').sort(function(a, b) {
+  if (a.textContent < b.textContent) {
+    return -1;
+  } else {
+    return 1;
+  }
+}).appendTo('#todos-list');
 
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS

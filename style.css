@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+/*default size for app*/
 :root {
   --container-height: 600px;
   --container-width: 400px;
   --header-height: 150px;
 }
 
+/*Default styling for the app*/
 * {
   padding: 0;
   margin: 0;
@@ -16,6 +18,7 @@ html {
   font-size: 20px;
 }
 
+/*this is the part around the container with a background*/
 body {
   width: 100vw;
   height: 100vh;
@@ -26,8 +29,9 @@ body {
   
 }
 
+/*Styling of the container*/
 .container {
-  background-color: whitesmoke;
+  background-color: lavender;
   width: var(--container-width);
   height: var(--container-height);
 
@@ -36,6 +40,7 @@ body {
   
 }
 
+/*header in the container has the space image where the input field is for the tasks*/
 header {
   width: 100%;
   height: var(--header-height);
@@ -52,16 +57,13 @@ header {
   color: #fff;
 }
 
-.btn-outline {
-  text-align: center;
-}
-
-
-
+/*sizing of the form*/
 .new-todo form {
   display: flex;
   align-items: center;
 }
+
+/*form input area styling and sizes*/
 .new-todo form input {
   flex: 1;
   height: 40px;
@@ -76,7 +78,7 @@ header {
 }
 
 
-
+/*styling of the add button for new tasks*/
 .new-todo form button {
   width: 60px;
   height: 40px;
@@ -87,10 +89,13 @@ header {
   border-left: 0px;
   cursor: pointer;
 }
+
+/*light animation on form buttons*/
 .new-todo form button:hover {
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
+/*todo list section styling and colors*/
 #todos-list {
   height: calc(var(--container-height) - var(--header-height));
   background-color:lavender;
@@ -101,10 +106,12 @@ header {
 
 }
 
+/*I did mot like the scrollbar so i hid them*/
 ::-webkit-scrollbar {
   display: none;
 }
 
+/*styling and animation*/
 #todos-list .todo {
   display: flex;
   align-items: center;
@@ -125,19 +132,23 @@ header {
   flex: 1;
   word-break: break-all;
 }
+/*when task is checked as done - grey line will appear*/
 .checked {
   text-decoration: line-through;
   color: grey;
 }
+/*Edit button is there to change a task*/
 #todos-list .todo .bi-pencil-square {
   color: rgb(31, 177, 48);
 }
+
+/*Delete a task that is done or one thats not needed*/
 #todos-list .todo .bi-trash {
   color: rgb(236, 82, 82);
   margin: 0;
 }
 
-
+/*Alert that happens when the field is empty or a duplicate*/
 .notification {
   position: absolute;
 

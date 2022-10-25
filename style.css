@@ -23,6 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #9fa8a3;
+  
 }
 
 .container {
@@ -32,7 +33,9 @@ body {
 
   position: relative;
   overflow: hidden;
+  
 }
+
 header {
   width: 100%;
   height: var(--header-height);
@@ -76,7 +79,11 @@ header {
   padding-left: 0.5rem;
   font-size: 1rem;
   color: #fff;
+  
 }
+
+
+
 .new-todo form button {
   width: 60px;
   height: 40px;
@@ -98,6 +105,11 @@ header {
   border: 1px solid rgb(219, 219, 219);
   overflow: scroll;
   border-radius: 0 0 5px 5px;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #todos-list .todo {

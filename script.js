@@ -4,6 +4,7 @@ const todoInput = document.getElementById('newtodo');
 const todosListEl = document.getElementById('todos-list');
 const notificationEl = document.querySelector('.notification');
 
+
 // VARS
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let EditTodoId = -1;
@@ -30,7 +31,7 @@ function saveTodo() {
 
   // check for duplicate todos
 
-  //If not - send out alert
+  //If not - send out alert - make sure its not case sensitive so it still doesn't duplicate
   const isDuplicate = todos.some((todo) => todo.value.toUpperCase() === todoValue.toUpperCase());
 
   if (isEmpty) {
@@ -79,9 +80,11 @@ function renderTodos() {
       ></i>
       <p class="${todo.checked ? 'checked' : ''}" data-action="check">${todo.value}</p>
    
+
+     
       <i class="bi bi-pencil-square" data-action="edit"></i>
       <i class="bi bi-trash" data-action="delete"></i>
-
+      
       
       
       
@@ -90,6 +93,11 @@ function renderTodos() {
     
   });
 }
+
+
+
+
+
 
 //SORT ALPHABETICALLY
 
@@ -119,6 +127,7 @@ todosListEl.addEventListener('click', (event) => {
   // target action
   const action = target.dataset.action;
 
+  action === 'date' && dateTodo(todoId);
   action === 'check' && checkTodo(todoId);
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
@@ -135,6 +144,11 @@ function checkTodo(todoId) {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+function dateTodo(todoId) {
+  todoInput.dateTodo =todos[todoId].date;
+  EditTodoId =-1;
+}
+
 // EDIT A TODO
 function editTodo(todoId) {
   todoInput.value = todos[todoId].value;
@@ -145,6 +159,8 @@ function editTodo(todoId) {
 function deleteTodo(todoId) {
   todos = todos.filter((todo, index) => index !== todoId);
   EditTodoId = -1;
+
+  
 
   // re-render
   renderTodos();

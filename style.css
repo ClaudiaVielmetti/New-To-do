@@ -43,7 +43,7 @@ body {
 /*header in the container has the space image where the input field is for the tasks*/
 header {
   width: 100%;
-  height: var(--header-height);
+
   background-image: url(./Images/space.jpg);
   background-size: cover;
   border-radius: 5px 5px 0 0;
@@ -71,11 +71,12 @@ header {
   border: none;
   border-right: 0px;
   outline: transparent;
-  padding-left: 0.5rem;
+  padding-left: 0.7rem;
   font-size: 1rem;
   color: #fff;
   
 }
+
 
 
 /*styling of the add button for new tasks*/
@@ -89,6 +90,8 @@ header {
   border-left: 0px;
   cursor: pointer;
 }
+
+
 
 /*light animation on form buttons*/
 .new-todo form button:hover {
@@ -111,12 +114,17 @@ header {
   display: none;
 }
 
+.form-floating > .bi-calendar-date + .datepicker_input + label {
+  padding-left: 3.5rem;
+  z-index: 3;
+}
+
 /*styling and animation*/
 #todos-list .todo {
   display: flex;
   align-items: center;
   padding: 0.75rem 0.5rem;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 #todos-list .todo:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -129,7 +137,7 @@ header {
   font-size: 0.9rem;
 }
 #todos-list .todo p {
-  flex: 1;
+  flex: 2;
   word-break: break-all;
 }
 /*when task is checked as done - grey line will appear*/

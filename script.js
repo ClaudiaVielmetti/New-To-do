@@ -101,17 +101,32 @@ function renderTodos() {
 
 //SORT ALPHABETICALLY
 
-//NOTE:
 
-//ONLY WORKS UPON REFRESH OF PAGE
-$('.todo').sort(function(a, b) {
-  if (a.textContent < b.textContent) {
-    return -1;
-  } else {
-    return 1;
+
+var sortID = function () {
+
+  var toSort = document.getElementById('todos-list').children;
+  toSort = Array.prototype.slice.call(toSort, 0);
+
+  toSort.sort(function (a, b) {
+      var aord = +a.id.split('-')[1];
+      var bord = +b.id.split('-')[1];
+      // two elements never have the same ID hence this is sufficient:
+      return (aord > bord) ? 1 : -1;
+  });
+
+  var parent = document.getElementById('todos-list');
+  parent.innerHTML = "";
+
+  for (var i = 0, l = toSort.length; i < l; i++) {
+      parent.appendChild(toSort[i]);
   }
-}).appendTo('#todos-list');
 
+};
+
+window.onload = function(){
+  document.getElementById("myButton").onclick = sortID;
+}
 
 // CLICK EVENT LISTENER FOR ALL THE TODOS
 todosListEl.addEventListener('click', (event) => {
@@ -127,7 +142,7 @@ todosListEl.addEventListener('click', (event) => {
   // target action
   const action = target.dataset.action;
 
-  action === 'date' && dateTodo(todoId);
+
   action === 'check' && checkTodo(todoId);
   action === 'edit' && editTodo(todoId);
   action === 'delete' && deleteTodo(todoId);
@@ -144,10 +159,7 @@ function checkTodo(todoId) {
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-function dateTodo(todoId) {
-  todoInput.dateTodo =todos[todoId].date;
-  EditTodoId =-1;
-}
+
 
 // EDIT A TODO
 function editTodo(todoId) {

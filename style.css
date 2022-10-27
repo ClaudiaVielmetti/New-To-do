@@ -114,9 +114,17 @@ header {
   display: none;
 }
 
-.form-floating > .bi-calendar-date + .datepicker_input + label {
-  padding-left: 3.5rem;
-  z-index: 3;
+#myButton {
+
+  width: 60px;
+  height: 40px;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  border-left: 0px;
+  cursor: pointer;
+  color: deeppink;
+  
 }
 
 /*styling and animation*/

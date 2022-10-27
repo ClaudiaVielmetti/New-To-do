@@ -95,13 +95,7 @@ function renderTodos() {
 }
 
 
-
-
-
-
 //SORT ALPHABETICALLY
-
-
 
 var sortID = function () {
 
